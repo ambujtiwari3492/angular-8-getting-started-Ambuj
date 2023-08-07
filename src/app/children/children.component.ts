@@ -8,16 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChildrenComponent implements OnInit {
   name: string;
-  id: number;
+  Id: any;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.id = +params['id'];
-      this.name = params['name'];
+    this.route.queryParamMap.subscribe((params) => {
+      this.Id = params.get('Id');
+      this.name = params.get('name');
     });
 
-    console.log(this.id);
+    console.log(this.Id);
   }
 }
