@@ -15,6 +15,7 @@ import { ChildrenComponent } from './children/children.component';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'children/:id', component: ChildrenComponent },
+      {path: 'children', component: ChildrenComponent}
     ]),
   ],
   declarations: [
