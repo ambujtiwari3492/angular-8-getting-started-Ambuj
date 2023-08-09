@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ChildrenComponent } from './children/children.component';
+import { FetchComponent } from './fetch/fetch.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiDataService } from './api-data.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: FetchComponent },
      // { path: 'children/:id', component: ChildrenComponent },
      // {path: 'children', component: ChildrenComponent}
      { path: 'children', component: ChildrenComponent },
@@ -24,7 +28,9 @@ import { ChildrenComponent } from './children/children.component';
     ChildrenComponent,
     TopBarComponent,
     ProductListComponent,
+    FetchComponent,
   ],
+  providers: [ApiDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
